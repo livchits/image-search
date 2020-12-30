@@ -6,6 +6,7 @@
     "lint": "prettier --check \"src/**/*.{js,jsx}\""
   },
   "dependencies": {
+    "@tailwindcss/forms": "^0.2.1",
     "autoprefixer": "^10.1.0",
     "postcss": "^8.2.2",
     "react": "^17.0.0",

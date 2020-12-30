@@ -1,17 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import * as React from 'react';
+
+import SearchForm from './components/SearchForm';
 
 function App() {
-  // Create the count state.
-  const [count, setCount] = useState(0);
-  // Create the counter (+1 every second).
-  useEffect(() => {
-    const timer = setTimeout(() => setCount(count + 1), 1000);
-    return () => clearTimeout(timer);
-  }, [count, setCount]);
-  // Return the App component.
   return (
-    <div className="min-h-screen text-xl font-bold text-gray-800 bg-red-400">
-      Texto de prueba
+    <div className="min-h-screen bg-gradient-to-t from-yellow-700 to-yellow-100">
+      <SearchForm />
     </div>
   );
 }
