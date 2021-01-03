@@ -4,16 +4,22 @@ import api from './api/api';
 
 function useDataImages(query) {
   const [dataImages, setDataImages] = React.useState(null);
+  const [error, setError] = React.useState(false);
 
   React.useEffect(() => {
-    const getImages = async (query) => {
-      const results = await api(query);
-      setDataImages(results);
-    };
-    getImages(query);
+    if (query !== null) {
+      const getImages = async (query) => {
+        const {
+          data: { results },
+          error,
+        } = await api(query);
+        error ? setError(error) : setDataImages(results);
+      };
+      getImages(query);
+    }
   }, [query]);
 
-  return [dataImages];
+  return [dataImages, error];
 }
 
 export default useDataImages;

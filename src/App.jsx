@@ -5,12 +5,21 @@ import useDataImages from './useDataImages';
 
 function App() {
   const [query, setQuery] = React.useState(null);
-  const [dataImages] = useDataImages(query);
+  const [dataImages, error] = useDataImages(query);
 
   return (
     <main className="min-h-screen bg-gradient-to-t from-yellow-700 to-yellow-100">
       <SearchForm setQuery={setQuery} />
       <div>
+        {/* {error ? (
+          <div>Ups... Algo salió mal</div>
+        ) : (
+          dataImages.map(({ id, alt_description, urls: { small } }) => (
+            <div key={id}>
+              <img alt={alt_description} src={small} />
+            </div>
+          ))
+        )} */}
         {dataImages &&
           dataImages.map(({ id, alt_description, urls: { small } }) => (
             <div key={id}>
