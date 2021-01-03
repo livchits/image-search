@@ -1,7 +1,5 @@
 import * as React from 'react';
 
-// import getImages from '../api/api';
-
 function SearchForm({ setQuery }) {
   const handleSubmit = (event) => {
     event.preventDefault();
