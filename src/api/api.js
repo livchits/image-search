@@ -1,7 +1,7 @@
 const URL = import.meta.env.SNOWPACK_PUBLIC_API_URL;
 const ACCESS_KEY = import.meta.env.SNOWPACK_PUBLIC_API_ACCESS_KEY;
 
-async function getImages(query) {
+async function api(query) {
   const response = await fetch(`${URL}${query}`, {
     headers: {
       Authorization: `Client-ID ${ACCESS_KEY}`,
@@ -12,4 +12,4 @@ async function getImages(query) {
   return results;
 }
 
-export default getImages;
+export default api;

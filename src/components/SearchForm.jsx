@@ -1,13 +1,12 @@
 import * as React from 'react';
 
-import getImages from '../api/getImages';
+// import getImages from '../api/api';
 
-function SearchForm() {
-  const handleSubmit = async (event) => {
+function SearchForm({ setQuery }) {
+  const handleSubmit = (event) => {
     event.preventDefault();
     const { value } = event.target.elements.search;
-    const data = await getImages(value);
-    console.log(data);
+    setQuery(value);
   };
 
   return (
