@@ -1,4 +1,5 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
 
 function SearchForm({ setQuery }) {
   const handleSubmit = (event) => {
@@ -30,5 +31,9 @@ function SearchForm({ setQuery }) {
     </form>
   );
 }
+
+SearchForm.propTypes = {
+  setQuery: PropTypes.func.isRequired,
+};
 
 export default SearchForm;
