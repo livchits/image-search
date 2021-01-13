@@ -9,16 +9,15 @@ function App() {
   const [dataImages, error] = useDataImages(query);
 
   return (
-    <main className="min-h-screen bg-gradient-to-t from-yellow-700 to-yellow-100">
+    <main className="min-h-screen bg-gradient-to-t from-indigo-200 to-indigo-50 bg-">
       <SearchForm setQuery={setQuery} />
-      <div>
-        {/*  {error ? (
+
+      {/*  {error ? (
           <div>Ups... Algo salió mal</div>
         ) : (
           <ImagesFound dataImages={dataImages} />
         )} */}
-        {dataImages && <ImagesFound dataImages={dataImages} />}
-      </div>
+      {dataImages && <ImagesFound dataImages={dataImages} />}
     </main>
   );
 }
