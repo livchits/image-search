@@ -5,9 +5,7 @@ function ImagesFound({ dataImages }) {
   return (
     <div className="w-11/12 mx-auto">
       {dataImages.map(({ id, alt_description, urls: { small } }) => (
-        <div key={id}>
-          <img alt={alt_description} src={small} />
-        </div>
+        <img key={id} alt={alt_description} src={small} />
       ))}
     </div>
   );
