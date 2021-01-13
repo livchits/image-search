@@ -14,8 +14,8 @@ async function api(query) {
       },
     });
     if (response.ok) {
-      const data = await response.json();
-      return { data, error: !response.ok };
+      const { results } = await response.json();
+      return { results, error: !response.ok };
     }
     throw new Error(response.statusText);
   } catch (error) {
