@@ -12,12 +12,16 @@ function App() {
     <main className="min-h-screen bg-gradient-to-t from-indigo-200 to-indigo-50 bg-">
       <SearchForm setQuery={setQuery} />
 
-      {/*  {error ? (
-          <div>Ups... Algo salió mal</div>
-        ) : (
-          <ImagesFound dataImages={dataImages} />
-        )} */}
-      {dataImages && <ImagesFound dataImages={dataImages} />}
+      {error ? (
+        <div>
+          Sorry, something went wrong
+          <span aria-label="An poop emoji" role="img">
+            💩
+          </span>
+        </div>
+      ) : (
+        dataImages && <ImagesFound dataImages={dataImages} />
+      )}
     </main>
   );
 }
