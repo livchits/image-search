@@ -1,27 +1,17 @@
 import * as React from 'react';
 
-import ImagesFound from './components/ImagesFound';
-import SearchForm from './components/SearchForm';
 import useDataImages from './useDataImages';
+import SearchForm from './components/SearchForm';
+import SearchResult from './components/SearchResult';
 
 function App() {
   const [query, setQuery] = React.useState(null);
   const [dataImages, error] = useDataImages(query);
 
   return (
-    <main className="min-h-screen bg-gradient-to-t from-indigo-200 to-indigo-50 bg-">
+    <main className="min-h-screen bg-gradient-to-t from-indigo-200 to-indigo-50">
       <SearchForm setQuery={setQuery} />
-
-      {error ? (
-        <div>
-          Sorry, something went wrong
-          <span aria-label="An poop emoji" role="img">
-            💩
-          </span>
-        </div>
-      ) : (
-        dataImages && <ImagesFound dataImages={dataImages} />
-      )}
+      <SearchResult dataImages={dataImages} error={error} />
     </main>
   );
 }
