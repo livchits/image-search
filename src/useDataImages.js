@@ -8,8 +8,8 @@ function useDataImages(query) {
 
   React.useEffect(() => {
     const getImages = async (query) => {
-      const { results, error } = await api(query);
-      error ? setError(error) : setDataImages(results);
+      const { data, error } = await api(query);
+      error ? setError(error) : setDataImages(data);
     };
     if (query !== null) {
       getImages(query);

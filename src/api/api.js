@@ -15,7 +15,14 @@ async function api(query) {
     });
     if (response.ok) {
       const { results } = await response.json();
-      return { results, error: !response.ok };
+      const data = results.map(
+        ({ id, alt_description: altDescription, urls: { small: url } }) => ({
+          id,
+          altDescription,
+          url,
+        }),
+      );
+      return { data, error: !response.ok };
     }
     throw new Error(response.statusText);
   } catch (error) {
