@@ -7,7 +7,7 @@ import Image from './Image';
 
 function ImagesFound({ dataImages }) {
   return (
-    <div className="flex flex-col items-center w-10/12 mx-auto lg:flex-row lg:flex-wrap lg:justify-evenly lg:items-start">
+    <div className="flex flex-col items-center w-10/12 mx-auto lg:flex-row lg:flex-wrap lg:justify-evenly">
       {dataImages.length === 0 ? (
         <p className="px-6 py-12 font-mono text-xl leading-relaxed text-center text-gray-800 bg-gray-700 rounded-lg shadow-sm max-w-screen-mdmt-12 bg-opacity-5">
           {"Sorry, we couldn't found any image"}{' '}
