@@ -3,7 +3,7 @@ import normalizeData from '../utils/normalizeData';
 const URL = import.meta.env.SNOWPACK_PUBLIC_API_URL;
 const ACCESS_KEY = import.meta.env.SNOWPACK_PUBLIC_API_ACCESS_KEY;
 
-async function api(query) {
+async function api(query, abortController) {
   try {
     const response = await fetch(`${URL}${query}`, {
       // const response = await fetch(
@@ -14,6 +14,7 @@ async function api(query) {
         Authorization: `Client-ID ${ACCESS_KEY}`,
         'Accept-Version': 'v1',
       },
+      signal: abortController.signal,
     });
     if (response.ok) {
       const { results } = await response.json();
