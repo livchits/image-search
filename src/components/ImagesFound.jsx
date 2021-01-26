@@ -1,8 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-//<div className="flex flex-col items-center w-10/12 mx-auto lg:block lg:masonry">
-
 import Image from './Image';
 import Alert from './Alert';
 
