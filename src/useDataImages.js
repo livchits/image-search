@@ -9,7 +9,7 @@ function useDataImages(query) {
   React.useEffect(() => {
     const abortController = new AbortController();
     const getImages = async (query) => {
-      const { data, error } = await api(query abortController);
+      const { data, error } = await api(query, abortController);
       error ? setError(error) : setDataImages(data);
     };
     if (query !== null) {
