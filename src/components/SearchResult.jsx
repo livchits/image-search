@@ -4,14 +4,26 @@ import PropTypes from 'prop-types';
 import ImagesFound from './ImagesFound';
 import Alert from './Alert';
 
-function SearhResult({ error, dataImages }) {
-  if (error) {
+function SearhResult({ status, dataImages }) {
+  if (status === 'rejected') {
     return (
       <div className="w-10/12 mx-auto">
         <Alert type="error">
           Sorry, something went wrong{' '}
           <span aria-label="A poop emoji" role="img">
             💩
+          </span>
+        </Alert>
+      </div>
+    );
+  }
+  if (status === 'pending') {
+    return (
+      <div className="w-10/12 mx-auto">
+        <Alert>
+          We are searching...{' '}
+          <span aria-label="An emoji of a face with a monocle" role="img">
+            🧐
           </span>
         </Alert>
       </div>
@@ -24,7 +36,7 @@ function SearhResult({ error, dataImages }) {
 }
 
 SearhResult.propTypes = {
-  error: PropTypes.bool,
+  status: PropTypes.string.isRequired,
   dataImages: PropTypes.arrayOf(PropTypes.object),
 };
 
