@@ -3,20 +3,31 @@ import * as React from 'react';
 import api from './api/api';
 
 function useDataImages(query) {
-  const [dataImages, setDataImages] = React.useState(null);
-  const [error, setError] = React.useState(false);
+  const [{ status, data }, setState] = React.useState({
+    status: 'idle',
+    data: null,
+  });
 
   React.useEffect(() => {
     const getImages = async (query) => {
+      setState((state) => ({ ...state, status: 'pending' }));
       const { data, error } = await api(query);
-      error ? setError(error) : setDataImages(data);
+      error
+        ? setState((state) => ({ ...state, status: 'rejected' }))
+        : setTimeout(() => {
+            setState((state) => ({
+              ...state,
+              status: 'resolved',
+              data,
+            }));
+          }, 750);
     };
     if (query !== null) {
       getImages(query);
     }
   }, [query]);
 
-  return [dataImages, error];
+  return [status, data];
 }
 
 export default useDataImages;

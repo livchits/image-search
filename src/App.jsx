@@ -7,13 +7,13 @@ import Footer from './Footer';
 
 function App() {
   const [query, setQuery] = React.useState(null);
-  const [dataImages, error] = useDataImages(query);
+  const [status, dataImages] = useDataImages(query);
 
   return (
     <>
       <main className="flex-grow">
         <SearchForm setQuery={setQuery} />
-        <SearchResult dataImages={dataImages} error={error} />
+        <SearchResult dataImages={dataImages} status={status} />
       </main>
       <Footer />
     </>
