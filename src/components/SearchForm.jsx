@@ -10,7 +10,7 @@ function SearchForm({ setQuery }) {
 
   return (
     <form
-      className="w-screen max-w-screen-md p-8 m-auto text-center sm:w-9/12"
+      className="w-screen max-w-screen-md p-8 m-auto mt-8 text-center sm:w-9/12"
       onSubmit={handleSubmit}
     >
       <label
@@ -23,7 +23,7 @@ function SearchForm({ setQuery }) {
         </span>
       </label>
       <input
-        className="w-full mt-4 font-mono text-xl text-gray-700 border-2 border-gray-500 rounded-md shadow-sm focus:border-blue-500 focus:border-4 focus:ring-inset"
+        className="w-full font-mono text-xl text-gray-700 border-2 border-gray-500 rounded-md shadow-sm mt-7 focus:border-blue-500 focus:border-4 focus:ring-inset"
         id="search"
         name="search"
         type="text"
