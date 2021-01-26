@@ -11,7 +11,7 @@ function ImagesFound({ dataImages }) {
     <div className="flex flex-col items-center w-10/12 mx-auto lg:flex-row lg:flex-wrap lg:justify-evenly">
       {dataImages.length === 0 ? (
         <Alert>
-          {"Sorry, we couldn't found any image"}{' '}
+          {"Sorry, we couldn't find any image"}{' '}
           <span aria-label="A sorry emoji face" role="img">
             😔
           </span>

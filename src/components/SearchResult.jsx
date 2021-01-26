@@ -10,7 +10,7 @@ function SearhResult({ error, dataImages }) {
       <div className="w-10/12 mx-auto">
         <Alert type="error">
           Sorry, something went wrong{' '}
-          <span aria-label="An poop emoji" role="img">
+          <span aria-label="A poop emoji" role="img">
             💩
           </span>
         </Alert>
