@@ -10,14 +10,14 @@ function SearchForm({ setQuery }) {
 
   return (
     <form
-      className="w-screen max-w-screen-md p-8 m-auto mt-8 text-center sm:w-9/12"
+      className="w-screen max-w-screen-md p-6 m-auto mt-8 tracking-tight text-center sm:w-9/12"
       onSubmit={handleSubmit}
     >
       <label
         className="font-mono text-2xl leading-none text-gray-800"
         htmlFor="search"
       >
-        Search an image
+        Search for an image
         <span aria-label="A magnifying glass" className="mx-2" role="img">
           🔍
         </span>
