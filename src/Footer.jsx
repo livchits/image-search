@@ -9,7 +9,10 @@ function Footer() {
           🚀
         </span>
       </a>
-      <a className="hover:text-gray-600" href="https://github.com/livchits">
+      <a
+        className="hover:text-gray-600"
+        href="https://github.com/livchits/image-search"
+      >
         Check the code here
       </a>
     </footer>
