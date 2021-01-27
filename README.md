@@ -1,25 +1,24 @@
-# New Project
+# Image search app
 
-> ✨ Bootstrapped with Create Snowpack App (CSA).
+This is an image search app made following [this challenge](https://www.codementor.io/projects/image-search-gallery-au63vo9tfr) from [Codementor](https://dp-cdn.codementor.io/images/logo-w-codementor.png).
 
-## Available Scripts
+The user can input some text to search images using the Unsplash's API. It shows up to 10 images, a message if no images weren't found or an error message if something went wrong with the API.
 
-### npm start
+I used:
 
-Runs the app in the development mode.
-Open http://localhost:8080 to view it in the browser.
+- React
+- TailwindCSS
+- Snowpack with Create Snowpack App
 
-The page will reload if you make edits.
-You will also see any lint errors in the console.
+Visit the app [here](https://image-search-app.onrender.com/).
 
-### npm run build
+### Run it locally
 
-Builds a static copy of your site to the `build/` folder.
-Your app is ready to be deployed!
+To run the app locally, you have to clone the repository and add an `.env` file with to variables, replacing the value of the second with an API access key from Unsplash:
 
-**For the best production performance:** Add a build bundler plugin like "@snowpack/plugin-webpack" to your `snowpack.config.js` config file.
+```
+SNOWPACK_PUBLIC_API_URL=https://api.unsplash.com/search/photos?page=1&query=
+SNOWPACK_PUBLIC_API_ACCESS_KEY=you_api_key
+```
 
-### npm test
-
-Launches the application test runner.
-Run with the `--watch` flag (`npm test -- --watch`) to run in interactive watch mode.
+Then you have to install all the dependencies with `npm run install` and execute `npm run start` to run the app in the development mode.
