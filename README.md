@@ -1,4 +1,4 @@
-# Image search app
+# A React image search app
 
 This is an image search app made following [this challenge](https://www.codementor.io/projects/image-search-gallery-au63vo9tfr) from [Codementor](https://dp-cdn.codementor.io/images/logo-w-codementor.png).
 
