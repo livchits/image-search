@@ -15,8 +15,13 @@ function ImagesFound({ dataImages }) {
           </span>
         </Alert>
       ) : (
-        dataImages.map(({ id, altDescription, url }) => (
-          <Image key={id} altDescription={altDescription} url={url} />
+        dataImages.map(({ id, altDescription, url, unsplashLink }) => (
+          <Image
+            key={id}
+            altDescription={altDescription}
+            unsplashLink={unsplashLink}
+            url={url}
+          />
         ))
       )}
     </div>
