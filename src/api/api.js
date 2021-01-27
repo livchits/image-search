@@ -6,10 +6,6 @@ const ACCESS_KEY = import.meta.env.SNOWPACK_PUBLIC_API_ACCESS_KEY;
 async function api(query, abortController) {
   try {
     const response = await fetch(`${URL}${query}`, {
-      // const response = await fetch(
-      //   `https://api.unsplash.com/search/photos?page=1&quer=
-      // ${query}`,
-      //   {
       headers: {
         Authorization: `Client-ID ${ACCESS_KEY}`,
         'Accept-Version': 'v1',
