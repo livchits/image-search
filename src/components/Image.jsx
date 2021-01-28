@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function Image({ altDescription, url, unsplashLink }) {
   return (
     <a
-      className="my-4 hover:scale-110"
+      className="my-4 transition-all transform hover:shadow-lg hover:scale-105"
       href={unsplashLink}
       rel="noopener noreferrer"
       target="_blank"
