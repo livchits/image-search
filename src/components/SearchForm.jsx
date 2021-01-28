@@ -17,7 +17,7 @@ function SearchForm({ setQuery }) {
         className="font-mono text-2xl leading-none text-gray-800"
         htmlFor="search"
       >
-        Search for an image
+        Search images of...
         <span aria-label="A magnifying glass" className="mx-2" role="img">
           🔍
         </span>
