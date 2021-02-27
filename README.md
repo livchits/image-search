@@ -1,6 +1,6 @@
 # A React image search app
 
-This is an image search app made following [this challenge](https://www.codementor.io/projects/image-search-gallery-au63vo9tfr) from [Codementor](https://dp-cdn.codementor.io/images/logo-w-codementor.png).
+This is an image search app made following [this challenge](https://www.codementor.io/projects/image-search-gallery-au63vo9tfr) from Codementor.
 
 The user can input some text to search images using the Unsplash's API. It shows up to 10 images, a message if no images weren't found or an error message if something went wrong with the API. Also the user can click on each image to see it on Unsplash.
 
