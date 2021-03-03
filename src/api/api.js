@@ -15,11 +15,11 @@ async function api(query, abortController) {
     if (response.ok) {
       const { results } = await response.json();
       const data = results.map(normalizeData);
-      return { data, error: !response.ok };
+      return { data };
     }
     throw new Error(response.statusText);
   } catch (error) {
-    return { error: true, message: error.message };
+    return { error };
   }
 }
 

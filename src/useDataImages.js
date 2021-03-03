@@ -6,6 +6,7 @@ function useDataImages(query) {
   const [{ status, data }, setState] = React.useState({
     status: 'idle',
     data: null,
+    error: null,
   });
 
   React.useEffect(() => {
@@ -14,7 +15,7 @@ function useDataImages(query) {
       setState((state) => ({ ...state, status: 'pending' }));
       const { data, error } = await api(query, abortController);
       error
-        ? setState((state) => ({ ...state, status: 'rejected' }))
+        ? setState((state) => ({ ...state, status: 'rejected', error }))
         : setTimeout(() => {
             setState((state) => ({
               ...state,
