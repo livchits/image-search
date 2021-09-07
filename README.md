@@ -4,6 +4,8 @@ This is an image search app made following [this challenge](https://www.codement
 
 The user can input some text to search images using the Unsplash's API. It shows up to 10 images, a message if no images weren't found or an error message if something went wrong with the API. Also the user can click on each image to see it on Unsplash.
 
+![imagen](https://user-images.githubusercontent.com/48001346/132268135-93e84915-e6e6-4ce5-92ab-23b395a80766.png)
+
 I used:
 
 - React
