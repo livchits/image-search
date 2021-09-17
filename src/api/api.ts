@@ -1,9 +1,10 @@
-import normalizeData from '../utils/normalizeData';
+import type { ImageData } from './../types/index';
+import normalizeData from 'src/utils/normalizeData';
 
 const URL = import.meta.env.SNOWPACK_PUBLIC_API_URL;
 const ACCESS_KEY = import.meta.env.SNOWPACK_PUBLIC_API_ACCESS_KEY;
 
-async function api(query, abortController) {
+async function api(query: string, abortController: AbortController) {
   try {
     const response = await fetch(`${URL}${query}`, {
       headers: {
@@ -13,7 +14,7 @@ async function api(query, abortController) {
       signal: abortController.signal,
     });
     if (response.ok) {
-      const { results } = await response.json();
+      const { results }: { results: ImageData[] } = await response.json();
       const data = results.map(normalizeData);
       return { data };
     }

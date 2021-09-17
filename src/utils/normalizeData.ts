@@ -1,23 +1,11 @@
-interface Data {
-  id: string;
-  alt_description: string;
-  urls: { small: string };
-  links: { html: string };
-}
-
-interface NormalizedData {
-  id: string;
-  altDescription: string;
-  url: string;
-  unsplashLink: string;
-}
+import type { ImageData, NormalizedImageData } from './../types/index';
 
 export default function normalizeData({
   id,
   alt_description: altDescription,
   urls: { small: url },
   links: { html: unsplashLink },
-}: Data): NormalizedData {
+}: ImageData): NormalizedImageData {
   return {
     id,
     altDescription,
