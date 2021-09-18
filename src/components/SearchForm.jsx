@@ -27,6 +27,7 @@ function SearchForm({ setQuery }) {
         id="search"
         name="search"
         type="text"
+        autoFocus
       />
     </form>
   );
