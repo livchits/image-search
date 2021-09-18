@@ -1,10 +1,18 @@
-import type { ImageData } from './../types/index';
+import type { ImageData, NormalizedImageData } from './../types/index';
 import normalizeData from 'src/utils/normalizeData';
 
 const URL = import.meta.env.SNOWPACK_PUBLIC_API_URL;
 const ACCESS_KEY = import.meta.env.SNOWPACK_PUBLIC_API_ACCESS_KEY;
 
-async function api(query: string, abortController: AbortController) {
+interface ApiResponse {
+  data: [] | NormalizedImageData[];
+  error?: unknown;
+}
+
+async function api(
+  query: string,
+  abortController: AbortController,
+): Promise<ApiResponse> {
   try {
     const response = await fetch(`${URL}${query}`, {
       headers: {
@@ -20,7 +28,7 @@ async function api(query: string, abortController: AbortController) {
     }
     throw new Error(response.statusText);
   } catch (error) {
-    return { error };
+    return { error, data: [] };
   }
 }
 
