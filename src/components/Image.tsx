@@ -1,7 +1,7 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
+import type { NormalizedImageData } from 'src/types';
 
-function Image({ altDescription, url, unsplashLink }) {
+function Image({ altDescription, url, unsplashLink }: NormalizedImageData) {
   return (
     <a
       className="my-4 transition-all transform hover:shadow-lg hover:scale-105"
@@ -13,11 +13,5 @@ function Image({ altDescription, url, unsplashLink }) {
     </a>
   );
 }
-
-Image.propTypes = {
-  altDescription: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
-  unsplashLink: PropTypes.string.isRequired,
-};
 
 export default Image;
