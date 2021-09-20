@@ -1,7 +1,9 @@
 import * as React from 'react';
 import type { NormalizedImageData } from 'src/types';
 
-function Image({ altDescription, url, unsplashLink }: NormalizedImageData) {
+interface ImageProps extends Omit<NormalizedImageData, 'id'> {}
+
+function Image({ altDescription, url, unsplashLink }: ImageProps) {
   return (
     <a
       className="my-4 transition-all transform hover:shadow-lg hover:scale-105"
