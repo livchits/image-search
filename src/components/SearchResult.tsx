@@ -1,10 +1,15 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 
 import ImagesFound from './ImagesFound';
 import Alert from './Alert';
+import type { NormalizedImageData, DataImagesState } from 'src/types';
 
-function SearhResult({ status, dataImages }) {
+interface SearchResultProps {
+  dataImages: NormalizedImageData[];
+  status: DataImagesState['status'];
+}
+
+function SearhResult({ status, dataImages }: SearchResultProps) {
   if (status === 'rejected') {
     return (
       <div className="w-10/12 mx-auto">
@@ -34,10 +39,5 @@ function SearhResult({ status, dataImages }) {
   }
   return null;
 }
-
-SearhResult.propTypes = {
-  status: PropTypes.string.isRequired,
-  dataImages: PropTypes.arrayOf(PropTypes.object),
-};
 
 export default SearhResult;

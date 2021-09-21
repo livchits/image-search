@@ -11,3 +11,9 @@ export interface NormalizedImageData {
   url: string;
   unsplashLink: string;
 }
+
+export interface DataImagesState {
+  status: 'idle' | 'pending' | 'resolved' | 'rejected';
+  data: NormalizedImageData[] | null | [];
+  error: unknown;
+}
