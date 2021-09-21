@@ -1,18 +1,12 @@
-import type { NormalizedImageData } from './types/index';
+import type { DataImagesState, NormalizedImageData } from './types/index';
 import * as React from 'react';
 
 import api from './api/api';
 
-interface DataImagesState {
-  status: 'idle' | 'pending' | 'resolved' | 'rejected';
-  data: NormalizedImageData[] | null | [];
-  error: unknown;
-}
-
-function useDataImages(query: string) {
-  const [{ status, data }, setState] = React.useState<DataImagesState>({
+function useDataImages(query: string | null) {
+  const [{ status, dataImages }, setState] = React.useState<DataImagesState>({
     status: 'idle',
-    data: null,
+    dataImages: null,
     error: null,
   });
 
@@ -20,14 +14,14 @@ function useDataImages(query: string) {
     const abortController = new AbortController();
     const getImages = async (query: string) => {
       setState((state) => ({ ...state, status: 'pending' }));
-      const { data, error } = await api(query, abortController);
+      const { data: dataImages, error } = await api(query, abortController);
       error
         ? setState((state) => ({ ...state, status: 'rejected', error }))
         : setTimeout(() => {
             setState((state) => ({
               ...state,
               status: 'resolved',
-              data,
+              dataImages,
             }));
           }, 750);
     };
@@ -39,7 +33,7 @@ function useDataImages(query: string) {
     };
   }, [query]);
 
-  return [status, data];
+  return { status, dataImages };
 }
 
 export default useDataImages;

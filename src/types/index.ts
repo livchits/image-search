@@ -14,6 +14,6 @@ export interface NormalizedImageData {
 
 export interface DataImagesState {
   status: 'idle' | 'pending' | 'resolved' | 'rejected';
-  data: NormalizedImageData[] | null | [];
+  dataImages: NormalizedImageData[] | null | [];
   error: unknown;
 }

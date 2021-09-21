@@ -2,10 +2,10 @@ import * as React from 'react';
 
 import ImagesFound from './ImagesFound';
 import Alert from './Alert';
-import type { NormalizedImageData, DataImagesState } from 'src/types';
+import type { DataImagesState } from 'src/types';
 
 interface SearchResultProps {
-  dataImages: NormalizedImageData[];
+  dataImages: DataImagesState['dataImages'];
   status: DataImagesState['status'];
 }
 
