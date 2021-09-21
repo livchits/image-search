@@ -1,10 +1,21 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 
-function SearchForm({ setQuery }) {
-  const handleSubmit = (event) => {
+interface FormElements extends HTMLFormControlsCollection {
+  search: HTMLInputElement;
+}
+
+interface SearchFormElement extends HTMLFormElement {
+  readonly elements: FormElements;
+}
+
+interface SearchFormProps {
+  setQuery: React.Dispatch<string>;
+}
+
+function SearchForm({ setQuery }: SearchFormProps) {
+  const handleSubmit = (event: React.FormEvent<SearchFormElement>) => {
     event.preventDefault();
-    const { value } = event.target.elements.search;
+    const { value } = event.currentTarget.elements.search;
     setQuery(value);
   };
 
@@ -32,9 +43,5 @@ function SearchForm({ setQuery }) {
     </form>
   );
 }
-
-SearchForm.propTypes = {
-  setQuery: PropTypes.func.isRequired,
-};
 
 export default SearchForm;
