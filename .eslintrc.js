@@ -46,4 +46,12 @@ module.exports = {
     'prettier/prettier': 'error',
     // 'react/react-in-jsx-scope': 'off', //Needed with Snowpack in spite of new JSX transform in React 17
   },
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      rules: {
+        'no-undef': 'off',
+      },
+    },
+  ],
 };
