@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import type { DataImagesState, NormalizedImageData } from './types/index';
+import type { DataImagesState } from './types/index';
 import api from './api/api';
 
 function useDataImages(query: string | null) {

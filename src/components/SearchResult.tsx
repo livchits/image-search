@@ -1,12 +1,12 @@
 import * as React from 'react';
+import type { DataImages, Status } from 'src/types';
 
 import ImagesFound from './ImagesFound';
 import Alert from './Alert';
-import type { DataImagesState } from 'src/types';
 
 interface SearchResultProps {
-  dataImages: DataImagesState['dataImages'];
-  status: DataImagesState['status'];
+  dataImages: DataImages;
+  status: Status;
 }
 
 function SearhResult({ status, dataImages }: SearchResultProps) {

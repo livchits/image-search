@@ -5,7 +5,7 @@ interface FormElements extends HTMLFormControlsCollection {
 }
 
 interface SearchFormElement extends HTMLFormElement {
-  readonly elements: FormElements;
+  elements: FormElements;
 }
 
 interface SearchFormProps {
@@ -13,7 +13,7 @@ interface SearchFormProps {
 }
 
 function SearchForm({ setQuery }: SearchFormProps) {
-  const handleSubmit = (event: React.FormEvent<SearchFormElement>) => {
+  const handleSubmit: React.FormEventHandler<SearchFormElement> = (event) => {
     event.preventDefault();
     const { value } = event.currentTarget.elements.search;
     setQuery(value);
@@ -34,11 +34,11 @@ function SearchForm({ setQuery }: SearchFormProps) {
         </span>
       </label>
       <input
+        autoFocus
         className="w-full font-mono text-xl text-gray-700 border-2 border-gray-500 rounded-md shadow-sm mt-7 focus:border-blue-500 focus:border-4 focus:ring-inset"
         id="search"
         name="search"
-        type="text"
-        autoFocus
+        type="search"
       />
     </form>
   );

@@ -44,6 +44,7 @@ module.exports = {
       },
     ],
     'prettier/prettier': 'error',
+    'jsx-a11y/no-autofocus': 0,
     // 'react/react-in-jsx-scope': 'off', //Needed with Snowpack in spite of new JSX transform in React 17
   },
   overrides: [

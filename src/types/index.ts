@@ -12,8 +12,10 @@ export interface NormalizedImageData {
   unsplashLink: string;
 }
 
+export type DataImages = NormalizedImageData[] | null | [];
+export type Status = 'idle' | 'pending' | 'resolved' | 'rejected';
 export interface DataImagesState {
-  status: 'idle' | 'pending' | 'resolved' | 'rejected';
-  dataImages: NormalizedImageData[] | null | [];
+  status: Status;
+  dataImages: DataImages;
   error: unknown;
 }
