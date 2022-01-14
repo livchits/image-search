@@ -1,8 +1,8 @@
 import * as React from 'react';
+import type { NormalizedImageData } from 'src/types';
 
 import Image from './Image';
 import Alert from './Alert';
-import type { NormalizedImageData } from 'src/types';
 
 interface ImagesFoundProps {
   dataImages: NormalizedImageData[];
